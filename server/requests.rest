@@ -1,0 +1,29 @@
+
+###
+GET http://localhost:3000/
+
+
+###
+GET http://localhost:3000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiS3lsZSIsImlhdCI6MTY0MzcxNTQ0MH0.a8tpHlH8Kr42UdBCd3IJazUQO56ZSaJd5sQN2JxXgJM
+
+
+###
+POST http://localhost:3000/login
+Content-Type: application/json
+
+{
+    "email":"sadfasdfasf@gmail.com",
+    "password":"ddadfadfasdf"
+}
+
+###
+GET http://localhost:4000
+
+###
+POST http://localhost:4000/api/v1/auth/register 
+
+{
+    "email":"aa@gmail.com",
+    "password":"123123123"
+}
