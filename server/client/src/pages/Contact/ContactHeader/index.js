@@ -1,5 +1,3 @@
-import React from "react";
-
 const ContactHeader = () => {
 	return (
 		<div className="flex items-center bg-slate-100 text-neutral-800 border font-medium border-slate-200 rounded-tl rounded-tr px-4">

@@ -1,5 +1,4 @@
-import React from "react";
-
+// Components
 import ButtonNLoading from "../Button/ButtonNLoading";
 
 const DialogBox = ({title, onClick, isLoading}) => {

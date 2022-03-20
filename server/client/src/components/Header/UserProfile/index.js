@@ -1,19 +1,22 @@
+// Packages
 import React, {useState} from "react";
-
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 
+// Functions
 import {removeUser, removeContact} from "../../../redux/actions";
 import {auth} from "../../../config/firebaseConfig";
 
+// Icons
 import {UilAngleUp} from "@iconscout/react-unicons";
 import {UilUserCircle} from "@iconscout/react-unicons";
+
+// Components
 import useToastBar from "../../../components/Toast";
 import Button from "../../Button";
 import IconButton from "../../Button/IconButton";
 
 const UserProfile = () => {
-	console.log("UserProfile");
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 	const {Toast} = useToastBar();
@@ -22,6 +25,7 @@ const UserProfile = () => {
 
 	const [show, setShow] = useState(false);
 
+	// Logout remove user from redux, clear localstorage
 	const logout = () => {
 		auth
 			.signOut()
@@ -39,8 +43,8 @@ const UserProfile = () => {
 			});
 	};
 
+	// Switch profile component
 	const showComponent = () => {
-		console.log("alert open");
 		setShow((prev) => !prev);
 	};
 

@@ -1,5 +1,4 @@
-import React from "react";
-
+// Assets
 import {ReactComponent as Contact} from "../../assets/contact.svg";
 
 const Home = () => {

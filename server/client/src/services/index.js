@@ -3,6 +3,7 @@ import axios from "axios";
 import {BASE_URL, API_VERSION} from "../constants";
 
 class ApiService {
+	// Get Request
 	sendGetRequest(url) {
 		let config = {
 			headers: {
@@ -30,6 +31,8 @@ class ApiService {
 				});
 		});
 	}
+
+	// Post Request
 	sendPostRequest(url, data) {
 		let config = {
 			headers: {
@@ -55,6 +58,8 @@ class ApiService {
 				});
 		});
 	}
+
+	// Delete Request
 	sendDeleteRequest(url) {
 		let config = {
 			headers: {
@@ -80,6 +85,8 @@ class ApiService {
 				});
 		});
 	}
+
+	// Put Request
 	sendPutRequest(url, data) {
 		let config = {
 			headers: {

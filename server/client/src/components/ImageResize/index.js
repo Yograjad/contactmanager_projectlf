@@ -1,11 +1,13 @@
+// Packages
 import React, {useState, useEffect} from "react";
 import Resizer from "react-image-file-resizer";
 import {getDownloadURL, ref, uploadBytesResumable} from "firebase/storage";
 
+// Functions
 import {storage} from "../../config/firebaseConfig";
 import {qualityList, resolutionList} from "../../assets/lists";
 
-import Button from "../../components/Button";
+// Components
 import Select from "../Select";
 import ButtonNLoading from "../../components/Button/ButtonNLoading";
 
@@ -40,7 +42,6 @@ const ImageResize = ({callback, update, photoGraph}) => {
 	}, [update]);
 
 	const [uploadURL, setUploadURL] = useState("");
-	// const [progress, setProgress] = useState(null);
 
 	useEffect(() => {
 		const onResize = () => {
@@ -77,6 +78,7 @@ const ImageResize = ({callback, update, photoGraph}) => {
 		setImageFile(event.target.files[0]);
 	};
 
+	// Upload image to firebase storage
 	const handleUpload = () => {
 		// console.log(this.state.image);
 		setIsLoading((prev) => !prev);

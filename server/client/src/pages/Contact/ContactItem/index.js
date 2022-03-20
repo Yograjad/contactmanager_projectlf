@@ -1,10 +1,12 @@
-import React from "react";
-
+// Functions
 import {capitalizeFirstLetter} from "../../../utils/capitalizeFirstLetter";
 
+// Icons
 import {UisFavorite} from "@iconscout/react-unicons-solid";
 import {UilTrash} from "@iconscout/react-unicons";
 import {UilPen} from "@iconscout/react-unicons";
+
+// Components
 import IconButton from "../../../components/Button/IconButton";
 
 const ContactItem = ({item, onFavourite, onEdit, onDelete}) => {

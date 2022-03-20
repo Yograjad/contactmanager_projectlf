@@ -1,5 +1,4 @@
-import React from "react";
-
+// Components
 import Form from "../Form";
 import RegistrationWrap from "../RegistrationWrap";
 

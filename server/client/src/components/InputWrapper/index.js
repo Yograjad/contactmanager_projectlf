@@ -1,5 +1,3 @@
-import React from "react";
-
 const InputWrapper = ({label, error, children}) => {
 	return (
 		<div className="w-full mb-1">

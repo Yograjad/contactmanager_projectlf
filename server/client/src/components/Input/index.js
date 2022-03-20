@@ -1,4 +1,4 @@
-import React from "react";
+// Components
 import InputWrapper from "../InputWrapper";
 
 const Input = ({label, error, multiline, type, value, onChange, onFocus}) => {

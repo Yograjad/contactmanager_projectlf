@@ -1,7 +1,9 @@
+// Packages
 import React, {useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {useDispatch} from "react-redux";
 
+// Functions
 import {saveUser} from "../../../redux/actions";
 import useFormData from "../../../hooks/useFormData";
 import {
@@ -11,6 +13,7 @@ import {
 import ApiService from "../../../services";
 import {REGISTER, LOGIN} from "../../../constants";
 
+// Components
 import ButtonNLoading from "../../../components/Button/ButtonNLoading";
 import Input from "../../../components/Input";
 import useToastBar from "../../../components/Toast";
@@ -32,6 +35,7 @@ const Form = ({title}) => {
 	const {Toast} = useToastBar();
 	const {onChange, onFocus, setError} = useFormData(setFormData, setFormError);
 
+	// Call api to register user
 	const onRegister = () => {
 		setIsLoading((prev) => !prev);
 		ApiService.sendPostRequest(REGISTER, formData)
@@ -46,6 +50,7 @@ const Form = ({title}) => {
 			});
 	};
 
+	// Call api to login
 	const onLogin = () => {
 		setIsLoading((prev) => !prev);
 		ApiService.sendPostRequest(LOGIN, formData)
@@ -60,6 +65,7 @@ const Form = ({title}) => {
 			});
 	};
 
+	// Show success message
 	const successMessage = (res, type) => {
 		if (type === "login") {
 			localStorage.setItem("token", res.data.data.accessToken);
@@ -75,6 +81,7 @@ const Form = ({title}) => {
 		setIsLoading((prev) => !prev);
 	};
 
+	// Validation field
 	const fieldValidation = (err) => {
 		if (!err.response.data.success) {
 			for (let item of err.response.data.error) {

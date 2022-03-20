@@ -1,4 +1,4 @@
-import React from "react";
+// Components
 import ContactItem from "../ContactItem";
 
 const ContactList = ({contacts, onFavourite, onEdit, onDelete}) => {

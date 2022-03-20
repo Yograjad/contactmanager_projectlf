@@ -1,7 +1,9 @@
+// Packages
 import React, {useState, useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {useNavigate} from "react-router-dom";
 
+// Functions
 import {removeContact} from "../../../redux/actions";
 import useFormData from "../../../hooks/useFormData";
 import {
@@ -11,6 +13,7 @@ import {
 import {ADD_CONTACT, UPDATE_CONTACT} from "../../../constants";
 import ApiService from "../../../services";
 
+// Components
 import Input from "../../../components/Input";
 import InputWrapper from "../../../components/InputWrapper";
 import ButtonNLoading from "../../../components/Button/ButtonNLoading";
@@ -51,6 +54,7 @@ const ContactForm = ({title}) => {
 	const {onChange, onFocus, setError} = useFormData(setFormData, setFormError);
 
 	useEffect(() => {
+		// If title === Edit Contact setfrom data from redux save during edit page redirect
 		if (title === "Edit Contact") {
 			setFormData({
 				userId: user._id,
@@ -64,6 +68,7 @@ const ContactForm = ({title}) => {
 		}
 	}, []);
 
+	// Toggle switch favourite
 	const onChangeFavourite = (e) => {
 		setFormData((prevState) => {
 			return {
@@ -73,6 +78,7 @@ const ContactForm = ({title}) => {
 		});
 	};
 
+	// Call add contact api
 	const onAddContact = () => {
 		setIsLoading((prev) => !prev);
 		ApiService.sendPostRequest(ADD_CONTACT, formData)
@@ -86,6 +92,8 @@ const ContactForm = ({title}) => {
 				if (err.response.status === 404) return statusError(err);
 			});
 	};
+
+	// Call edit contact api
 	const onEditContact = () => {
 		console.log("onedit contact ", formData);
 		setIsLoading((prev) => !prev);
@@ -104,6 +112,7 @@ const ContactForm = ({title}) => {
 			});
 	};
 
+	// Show success message,resetfield and navigate to contact page
 	const successMessage = (res) => {
 		Toast(`${res.data.message}`, "success");
 		setIsLoading((prev) => !prev);
@@ -113,6 +122,7 @@ const ContactForm = ({title}) => {
 		navigate("/contact");
 	};
 
+	// Reset form field
 	const resetField = () => {
 		Object.keys(formData).map((item) => {
 			return setFormData((prevState) => {
@@ -129,6 +139,7 @@ const ContactForm = ({title}) => {
 		});
 	};
 
+	// Validate field
 	const fieldValidation = (err) => {
 		if (!err.response.data.success) {
 			for (let item of err.response.data.error) {
@@ -146,6 +157,7 @@ const ContactForm = ({title}) => {
 		setIsLoading((prev) => !prev);
 	};
 
+	//
 	const statusError = (err) => {
 		if (!err.response.data.success) {
 			Toast(`${err.response.data.message}`, "error");
@@ -153,6 +165,7 @@ const ContactForm = ({title}) => {
 		setIsLoading((prev) => !prev);
 	};
 
+	// Call if photo update successfully
 	const callback = (url) => {
 		console.log("URL for photograph", url);
 		Toast("Upload Successful", "success");

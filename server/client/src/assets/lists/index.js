@@ -1,3 +1,4 @@
+// Photo Quality Select List
 export const qualityList = [
 	{
 		label: "30",
@@ -16,7 +17,7 @@ export const qualityList = [
 		value: 100,
 	},
 ];
-
+// Photo Resolution Select List
 export const resolutionList = [
 	{
 		label: "200",

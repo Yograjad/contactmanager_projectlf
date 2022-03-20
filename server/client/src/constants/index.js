@@ -3,6 +3,7 @@ export const BASE_URL = "https://merncontactapp.herokuapp.com";
 
 export const API_VERSION = "api/v1";
 
+// API EndPoints
 // Auth
 export const REGISTER = "auth/register";
 export const LOGIN = "auth/login";

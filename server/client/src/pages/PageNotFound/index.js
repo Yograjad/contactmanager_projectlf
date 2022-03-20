@@ -1,7 +1,10 @@
-import React from "react";
+// Packages
 import {useNavigate} from "react-router-dom";
 
+// Assets
 import {ReactComponent as NotSVG} from "../../assets/404.svg";
+
+// Components
 import Button from "../../components/Button";
 
 const PageNotFound = () => {

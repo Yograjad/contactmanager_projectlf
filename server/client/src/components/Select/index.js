@@ -1,4 +1,4 @@
-import React from "react";
+// Components
 import InputWrapper from "../InputWrapper";
 
 const Select = ({label, error, value, onChange, onFocus, options}) => {

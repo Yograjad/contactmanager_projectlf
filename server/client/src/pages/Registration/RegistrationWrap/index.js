@@ -1,5 +1,4 @@
-import React from "react";
-
+// Assets
 import {ReactComponent as SignupSVG} from "../../../assets/signup.svg";
 
 const RegistrationWrap = ({children}) => {

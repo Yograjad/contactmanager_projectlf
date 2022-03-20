@@ -1,5 +1,3 @@
-import React from "react";
-
 const IconButton = ({className, id, onClick, children}) => {
 	return (
 		<div className={className} onClick={onClick} id={id}>

@@ -2,10 +2,12 @@ import React, {useState, useEffect} from "react";
 import {useSelector, useDispatch} from "react-redux";
 import {useNavigate} from "react-router-dom";
 
+// Functions
 import {saveContact, removeContact} from "../../redux/actions/contact";
 import ApiService from "../../services";
 import {GET_CONTACT, DELETE_CONTACT} from "../../constants";
 
+// Components
 import Modals from "../../components/Modals";
 import DialogBox from "../../components/DialogBox";
 import ContactHeader from "./ContactHeader";
@@ -31,6 +33,7 @@ const Contact = () => {
 	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
+		// Call Get contact api
 		ApiService.sendGetRequest(`${GET_CONTACT}/${user._id}`)
 			.then((res) => {
 				console.log("Res", res);
@@ -58,18 +61,21 @@ const Contact = () => {
 		console.log("fav", item);
 	};
 
+	// Redirect to edit page
 	const onEdit = (item) => {
 		console.log("edit", item);
 		dispatch(saveContact(item));
 		history("/editcontact");
 	};
 
+	// Show delete modal
 	const onDeleteModal = (item) => {
 		console.log("delete", item);
 		setSelectedContact(item);
 		setIsOpen((prev) => !prev);
 	};
 
+	// Call delete api
 	const onDelete = () => {
 		console.log("selectd item delete", selectedContact._id);
 		setIsLoading((prev) => !prev);

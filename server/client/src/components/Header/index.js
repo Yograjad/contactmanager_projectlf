@@ -1,7 +1,9 @@
+// Packages
 import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import {useSelector} from "react-redux";
 
+// Components
 import UserProfile from "./UserProfile";
 
 const Header = () => {
@@ -16,6 +18,7 @@ const Header = () => {
 		setActive(path);
 	}, [path]);
 
+	// Go to
 	const goTo = (path) => {
 		if (user) return navigate(`/contact`);
 

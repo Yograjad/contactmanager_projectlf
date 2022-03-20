@@ -1,4 +1,7 @@
+// Packages
 import React, {useEffect} from "react";
+
+// Components
 import Modal from "react-modal";
 import {UilTimes} from "@iconscout/react-unicons";
 import "./modal.css";
@@ -22,10 +25,6 @@ const Modals = ({isOpen, children}) => {
 	useEffect(() => {
 		setIsOpen((prev) => !prev);
 	}, [isOpen]);
-
-	function openModal() {
-		setIsOpen((prev) => !prev);
-	}
 
 	function afterOpenModal() {
 		// references are now sync'd and can be accessed.
