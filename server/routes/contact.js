@@ -10,6 +10,7 @@ const {
 const verifyToken = require("../helpers/verify_token");
 const {contactSchema} = require("../helpers/schemas/validation_schema");
 const {validateBody} = require("../helpers/validator");
+const {route} = require("express/lib/router");
 
 const router = express.Router();
 //multer options
@@ -32,5 +33,12 @@ router.put(
 	validateBody(contactSchema),
 	updateContact
 );
+
+// router.route("/").get(getAllContact).post(createContact);
+// router
+// 	.route("/:id")
+// 	.get(getAllContact)
+// 	.put(updateContact)
+// 	.delete(deleteContact);
 
 module.exports = router;

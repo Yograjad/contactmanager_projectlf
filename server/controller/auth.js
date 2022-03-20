@@ -2,7 +2,7 @@
 
 const CryptoJS = require("crypto-js");
 const jwt = require("jsonwebtoken");
-const UserModal = require("../models/User");
+const UserModal = require("../models/user");
 const {EXPIRES_IN} = require("../constant");
 const {successMessage, errorMessage} = require("../helpers/format_message");
 

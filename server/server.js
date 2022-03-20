@@ -14,10 +14,15 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-app.use("/", homeRoute);
+// app.use("/", homeRoute);
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/user", userRoute);
 app.use("/api/v1/contacts", contactRoute);
+
+// Setup heroku
+if (process.env.NODE_ENV == "production") {
+	app.use(express.static("client/build"));
+}
 
 app.listen(PORT, () => {
 	console.log(`Server listening on ${PORT}`);

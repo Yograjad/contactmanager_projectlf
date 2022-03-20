@@ -1,7 +1,7 @@
 // require("dotenv").config();
 
 const CryptoJS = require("crypto-js");
-const UserModal = require("../models/User");
+const UserModal = require("../models/user");
 const {successMessage, errorMessage} = require("../helpers/format_message");
 
 const getUser = async (req, res) => {
