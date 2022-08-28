@@ -23,8 +23,8 @@ const ButtonNLoading = ({type, title, onClick, isLoading, className}) => {
 			style={{minWidth: "120px"}}
 			className={`flex items-center justify-center ${
 				loading
-					? "bg-gray-400 cursor-wait"
-					: "bg-blue-500 hover:bg-blue-700 transition ease-in-out duration-500"
+					? "bg-blue-400 cursor-wait"
+					: "bg-yellow-600 hover:bg-green-700 transition ease-in-out duration-500"
 			} px-3 py-3 rounded ${className}`}
 		>
 			{loading ? (
